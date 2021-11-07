@@ -28,10 +28,11 @@
 
 %link-basic {
   @extend %font-1;
-  @include fontSize(0.9em);
-  text-decoration: none;
   @include color(#fff);
+  text-decoration: none;
   padding: 0.8em 1.5em;
+  text-align: center;
+  width: 9.25em;
 }
 
 * {
@@ -40,15 +41,16 @@
   box-sizing: border-box;
 }
 
-body {
+.services {
+  @include flex(column, 1em);
+  align-items: center;
+  text-align: center;
   @include bgColor(#f7f7f7);
 
-  .services {
+  &__container {
     @include flex(column, 1em);
     width: 80%;
     margin: 5em auto;
-    align-items: center;
-    text-align: center;
 
     &__title {
       @extend %font-1;
@@ -60,6 +62,7 @@ body {
       @extend %font-2;
       @include color(#575757);
       width: 60%;
+      margin: 0 auto;
     }
 
     &__cards {
@@ -85,6 +88,7 @@ body {
 
         &__link {
           @extend %link-basic;
+          @include fontSize(0.9em);
           place-self: center;
 
           &--white {
@@ -119,6 +123,61 @@ body {
         &--pink {
           @include bgColor(#f9dbdb);
         }
+      }
+    }
+  }
+}
+
+.features {
+  @include flex(column, 1em);
+  width: 65%;
+  margin: 5em auto;
+  align-items: center;
+  
+  &__title {
+    @extend %font-1;
+    @include fontSize(2.2em);
+    @include color(#E70606);
+  }
+
+  &__description {
+    @extend %font-2;
+    @include color(#575757);
+    width: 80%;
+    text-align: center;
+  }
+
+  &__cards {
+    @include flex(column, 3em);
+    margin: 2em auto;
+
+    &__card {
+      @include flex(row, 7em);
+      place-items: center;
+    
+      &__content {
+        @include flex(column, 1.5em);
+      
+        &__title {
+          @extend %font-1;
+        }
+
+        &__description {
+          @extend %font-2;
+          line-height: 1.5em;
+        }
+
+        &__link {
+          @extend %link-basic;
+          @include bgColor(#E70606);
+        }
+      }
+
+      &__image {
+        width: 25em;
+        height: 25em;
+        border: 0.8em solid #F9DBDB;
+        border-radius: 50%;
       }
     }
   }
