@@ -1,3 +1,5 @@
+$breakpoint-mobile: 950px;
+
 @mixin color($color) {
   color: $color;
 }
@@ -16,6 +18,15 @@
   gap: $gap;
 }
 
+// CSS starts from here
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Large screen
 %font-1 {
   font-family: "Roboto Slab", serif;
   font-weight: 700;
@@ -33,12 +44,6 @@
   padding: 0.8em 1.5em;
   text-align: center;
   width: 9.25em;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .services {
@@ -94,15 +99,15 @@
           &--white {
             @include bgColor(#515151);
           }
-          
+
           &--blue {
             @include bgColor(#0047ff);
           }
-          
+
           &--green {
             @include bgColor(#40433c);
           }
-          
+
           &--pink {
             @include bgColor(#b75f5f);
           }
@@ -133,11 +138,11 @@
   width: 65%;
   margin: 5em auto;
   align-items: center;
-  
+
   &__title {
     @extend %font-1;
     @include fontSize(2.2em);
-    @include color(#E70606);
+    @include color(#e70606);
   }
 
   &__description {
@@ -154,10 +159,10 @@
     &__card {
       @include flex(row, 7em);
       place-items: center;
-    
+
       &__content {
         @include flex(column, 1.5em);
-      
+
         &__title {
           @extend %font-1;
         }
@@ -169,15 +174,69 @@
 
         &__link {
           @extend %link-basic;
-          @include bgColor(#E70606);
+          @include bgColor(#e70606);
         }
       }
 
       &__image {
         width: 25em;
         height: 25em;
-        border: 0.8em solid #F9DBDB;
+        border: 0.8em solid #f9dbdb;
         border-radius: 50%;
+      }
+    }
+  }
+}
+
+// Small screen
+@media screen and (max-width: $breakpoint-mobile) {
+  %font-1-tablet {
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+  }
+
+  %font-2-tablet {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+
+  %link-basic-tablet {
+    @extend %font-1-tablet;
+    @include color(#fff);
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    text-align: center;
+    width: 9.25em;
+  }
+
+  .services {
+    @include flex(column, 1em);
+
+    &__container {
+      @include flex(column, 1em);
+
+      &__cards {
+        @include flex(column, 1.5em);
+
+        &__card {
+          @include flex(column, 0.5em);
+        }
+      }
+    }
+  }
+
+  .features {
+    @include flex(column, 1em);
+
+    &__cards {
+      @include flex(column, 3em);
+
+      &__card {
+        @include flex(column, 7em);
+
+        &__content {
+          @include flex(column, 1.5em);
+        }
       }
     }
   }
