@@ -1,0 +1,125 @@
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin bgColor($bgColor) {
+  background-color: $bgColor;
+}
+
+@mixin fontSize($fontSize) {
+  font-size: $fontSize;
+}
+
+@mixin flex($direction, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+%font-1 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
+
+%font-2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+%link-basic {
+  @extend %font-1;
+  @include fontSize(0.9em);
+  text-decoration: none;
+  @include color(#fff);
+  padding: 0.8em 1.5em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include bgColor(#f7f7f7);
+
+  .services {
+    @include flex(column, 1em);
+    width: 80%;
+    margin: 5em auto;
+    align-items: center;
+    text-align: center;
+
+    &__title {
+      @extend %font-1;
+      @include fontSize(2.2em);
+      @include color(#212121);
+    }
+
+    &__description {
+      @extend %font-2;
+      @include color(#575757);
+      width: 60%;
+    }
+
+    &__cards {
+      @include flex(row, 1.5em);
+      margin: 1.5em auto;
+
+      &__card {
+        @include flex(column, 0.5em);
+        padding: 1.6em;
+
+        &__title {
+          @extend %font-1;
+          @include color(#212121);
+        }
+
+        &__description {
+          @extend %font-2;
+          @include fontSize(0.9em);
+          @include color(#575757);
+          line-height: 1.5em;
+          margin: 0.5em auto 2.5em;
+        }
+
+        &__link {
+          @extend %link-basic;
+          place-self: center;
+
+          &--white {
+            @include bgColor(#515151);
+          }
+          
+          &--blue {
+            @include bgColor(#0047ff);
+          }
+          
+          &--green {
+            @include bgColor(#40433c);
+          }
+          
+          &--pink {
+            @include bgColor(#b75f5f);
+          }
+        }
+
+        &--white {
+          @include bgColor(#fff);
+        }
+
+        &--blue {
+          @include bgColor(#e4f2ff);
+        }
+
+        &--green {
+          @include bgColor(#d1dfbf);
+        }
+
+        &--pink {
+          @include bgColor(#f9dbdb);
+        }
+      }
+    }
+  }
+}

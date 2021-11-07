@@ -1,0 +1,126 @@
+body .services__cards__card__link, body .services__title, body .services__cards__card__title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
+
+body .services__description, body .services__cards__card__description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+body .services__cards__card__link {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.8em 1.5em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+body .services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+  width: 80%;
+  margin: 5em auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+body .services__title {
+  font-size: 2.2em;
+  color: #212121;
+}
+
+body .services__description {
+  color: #575757;
+  width: 60%;
+}
+
+body .services__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1.5em;
+  margin: 1.5em auto;
+}
+
+body .services__cards__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5em;
+  padding: 1.6em;
+}
+
+body .services__cards__card__title {
+  color: #212121;
+}
+
+body .services__cards__card__description {
+  font-size: 0.9em;
+  color: #575757;
+  line-height: 1.5em;
+  margin: 0.5em auto 2.5em;
+}
+
+body .services__cards__card__link {
+  place-self: center;
+}
+
+body .services__cards__card__link--white {
+  background-color: #515151;
+}
+
+body .services__cards__card__link--blue {
+  background-color: #0047ff;
+}
+
+body .services__cards__card__link--green {
+  background-color: #40433c;
+}
+
+body .services__cards__card__link--pink {
+  background-color: #b75f5f;
+}
+
+body .services__cards__card--white {
+  background-color: #fff;
+}
+
+body .services__cards__card--blue {
+  background-color: #e4f2ff;
+}
+
+body .services__cards__card--green {
+  background-color: #d1dfbf;
+}
+
+body .services__cards__card--pink {
+  background-color: #f9dbdb;
+}
+/*# sourceMappingURL=style.css.map */
